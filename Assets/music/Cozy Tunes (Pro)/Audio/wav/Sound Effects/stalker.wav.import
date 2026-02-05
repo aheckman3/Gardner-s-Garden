@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cspv8k5sly3pq"
+path="res://.godot/imported/stalker.wav-ecc0083b22c87dfba83f311b93de7a39.sample"
+
+[deps]
+
+source_file="res://Assets/music/Cozy Tunes (Pro)/Audio/wav/Sound Effects/stalker.wav"
+dest_files=["res://.godot/imported/stalker.wav-ecc0083b22c87dfba83f311b93de7a39.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://l2tbkk4n1uyr"
+path="res://.godot/imported/Strange Worlds.ogg-6a0e9be5d2e868a6dd777a1ff4d4b04e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/music/Cozy Tunes (Pro)/Audio/ogg/Tracks/Strange Worlds.ogg"
+dest_files=["res://.godot/imported/Strange Worlds.ogg-6a0e9be5d2e868a6dd777a1ff4d4b04e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

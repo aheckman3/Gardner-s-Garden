@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsq7kauy8oa01"
+path="res://.godot/imported/presence behind.wav-775396c4854d750eb4903d52052d42d7.sample"
+
+[deps]
+
+source_file="res://Assets/music/Cozy Tunes (Pro)/Audio/wav/Sound Effects/presence behind.wav"
+dest_files=["res://.godot/imported/presence behind.wav-775396c4854d750eb4903d52052d42d7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

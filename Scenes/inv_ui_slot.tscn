@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://chjh2xhjg7p7a"]
+
+[ext_resource type="Texture2D" uid="uid://cwnawjge1axo1" path="res://Assets/inventory_sprites/inv_slot_sprite-3.png.png" id="1_o0rcv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fq4t"]
+
+[node name="inv_UI_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.33333337)
+texture = ExtResource("1_o0rcv")
+centered = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -5.0
+offset_right = 72.0
+offset_bottom = 43.0
+scale = Vector2(0.40201196, 0.52709293)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 0
+offset_top = 8.0
+offset_right = 33.439938
+offset_bottom = 31.0
+scale = Vector2(0.4692846, 0.36379603)
+label_settings = SubResource("LabelSettings_3fq4t")
+horizontal_alignment = 2

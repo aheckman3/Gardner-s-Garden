@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cap6dw3x3xuox"
+path="res://.godot/imported/Polar Lights.wav-202fddb8ddcd34b9e7ce5c107193d6ed.sample"
+
+[deps]
+
+source_file="res://Assets/music/Cozy Tunes (Pro)/Audio/wav/Tracks/Polar Lights.wav"
+dest_files=["res://.godot/imported/Polar Lights.wav-202fddb8ddcd34b9e7ce5c107193d6ed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

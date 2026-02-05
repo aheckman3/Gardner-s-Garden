@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://dfh2y5t3iis1p"]
+
+[ext_resource type="Script" uid="uid://nar2yyui6vx5" path="res://Scripts/start_screen.gd" id="1_ainjc"]
+[ext_resource type="FontFile" uid="uid://bofu0ilca3a26" path="res://Assets/fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="1_i8r30"]
+[ext_resource type="AudioStream" uid="uid://cbeqvtnt4pogw" path="res://Assets/music/myFX/menu_click - TRACK.mp3" id="3_60ddj"]
+
+[sub_resource type="Theme" id="Theme_ainjc"]
+default_font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ainjc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60ddj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e717"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtlf8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqnrp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a7ho"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ainjc")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9815763, 0.7542443, 0.49608764, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_right = 226.5
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 100
+
+[node name="titleContainer" type="CenterContainer" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="titleLabel" type="Label" parent="MarginContainer/titleContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.405891, 0.49436486, 0, 1)
+theme_override_fonts/font = ExtResource("1_i8r30")
+theme_override_font_sizes/font_size = 65
+text = "Gardner's Garden"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -40.0
+offset_right = 46.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.2978199, 2.5778685)
+theme_override_constants/margin_right = 120
+
+[node name="buttonContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_ainjc")
+theme_override_constants/separation = 15
+
+[node name="loadGame" type="Button" parent="MarginContainer2/buttonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.49411765, 0, 1)
+theme_override_fonts/font = ExtResource("1_i8r30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ainjc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_60ddj")
+text = "Continue Game"
+
+[node name="newGame" type="Button" parent="MarginContainer2/buttonContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0.40784314, 0.49411765, 0, 1)
+theme_override_fonts/font = ExtResource("1_i8r30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5e717")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mtlf8")
+text = "New Game"
+
+[node name="quit" type="Button" parent="MarginContainer2/buttonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 0.49411765, 0, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_fonts/font = ExtResource("1_i8r30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nqnrp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5a7ho")
+text = "Quit"
+
+[node name="hoversound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_60ddj")
+parameters/looping = false
+
+[connection signal="mouse_entered" from="MarginContainer2/buttonContainer/loadGame" to="." method="_on_load_game_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer2/buttonContainer/loadGame" to="." method="_on_load_game_mouse_exited"]
+[connection signal="pressed" from="MarginContainer2/buttonContainer/loadGame" to="." method="_on_load_game_pressed"]
+[connection signal="mouse_entered" from="MarginContainer2/buttonContainer/newGame" to="." method="_on_new_game_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer2/buttonContainer/newGame" to="." method="_on_new_game_mouse_exited"]
+[connection signal="pressed" from="MarginContainer2/buttonContainer/newGame" to="." method="_on_new_game_pressed"]
+[connection signal="mouse_entered" from="MarginContainer2/buttonContainer/quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer2/buttonContainer/quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="MarginContainer2/buttonContainer/quit" to="." method="_on_quit_pressed"]

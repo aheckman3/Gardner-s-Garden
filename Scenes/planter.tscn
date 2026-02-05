@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://cytflrkotdy45"]
+
+[ext_resource type="Script" uid="uid://dt6hs8enscyo1" path="res://Scripts/planter.gd" id="1_b3yyn"]
+[ext_resource type="Texture2D" uid="uid://5q3o3fbvsvrg" path="res://Assets/inventory_sprites/planter_sprites/planter_not_planted-2.png.png" id="1_tltlw"]
+[ext_resource type="Texture2D" uid="uid://b82fltc1s5bev" path="res://Assets/inventory_sprites/planter_sprites/plant_planted_empty-7.png.png" id="2_b3yyn"]
+[ext_resource type="Texture2D" uid="uid://5uk8w8ap0f0o" path="res://Assets/inventory_sprites/planter_sprites/plant_dark_purple-1.png.png" id="3_aumy8"]
+[ext_resource type="Texture2D" uid="uid://du2pwkdr7tfgm" path="res://Assets/inventory_sprites/planter_half-1.png (1).png" id="4_aumy8"]
+[ext_resource type="Texture2D" uid="uid://yt08rkai3y2n" path="res://Assets/inventory_sprites/planter_sprites/plant_light_purple-3.png.png" id="4_k6ulm"]
+[ext_resource type="Texture2D" uid="uid://dnlmyb88lq2io" path="res://Assets/inventory_sprites/planter_sprites/plant_orange-2.png.png" id="5_1iy0w"]
+[ext_resource type="Texture2D" uid="uid://n66fvqndgvbu" path="res://Assets/inventory_sprites/planter_sprites/plant_salmon-4.png.png" id="6_x6bx5"]
+[ext_resource type="Texture2D" uid="uid://cdmvl058gnxeb" path="res://Assets/inventory_sprites/planter_sprites/plant_blue-5.png.png" id="7_wu00k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrugb"]
+size = Vector2(26, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aumy8"]
+size = Vector2(12, 13)
+
+[node name="planter" type="Node2D"]
+z_index = 3
+script = ExtResource("1_b3yyn")
+
+[node name="unplanted" type="Sprite2D" parent="."]
+texture = ExtResource("1_tltlw")
+
+[node name="planted_empty" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 2)
+texture = ExtResource("2_b3yyn")
+
+[node name="bud" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 12)
+texture = ExtResource("4_aumy8")
+
+[node name="dark_purple" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3, -8)
+texture = ExtResource("3_aumy8")
+
+[node name="light_purple" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -7)
+texture = ExtResource("4_k6ulm")
+
+[node name="orange" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2, -4)
+texture = ExtResource("5_1iy0w")
+
+[node name="salmon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+texture = ExtResource("6_x6bx5")
+
+[node name="blue" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -5)
+texture = ExtResource("7_wu00k")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(3, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 8)
+shape = SubResource("RectangleShape2D_nrugb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_aumy8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
